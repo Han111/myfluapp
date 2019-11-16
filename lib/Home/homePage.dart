@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homePersonDetail.dart';
 
 class HomePage extends StatelessWidget {
   // createState() => new HomePageState();
@@ -6,10 +7,41 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       title: 'UITableView',
       home: MyHomePage(title: 'RelationshipNet'),
+      theme: new ThemeData(
+        primaryColor: Colors.white,
+      ),
     );
     // return Scaffold(
     //   appBar: AppBar(title:  Text('RelationshipNet')),
     // );
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigreation',
+            onPressed: () => debugPrint('Navigreation button is pressed'),
+          ),
+          title: Text('导航'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: () => debugPrint('Search button is pressed'),
+            ),
+            IconButton(
+              icon: Icon(Icons.more_horiz),
+              tooltip: 'More',
+              onPressed: () => debugPrint('More button is pressed'),
+            )
+          ],
+        ),
+        body: null);
   }
 }
 
@@ -43,6 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.add),
+              tooltip: 'More',
+              // onPressed: () => debugPrint('More button is pressed'),
+              onPressed: _pushDetail,
+            )
+          ],
       ),
         body: new Scrollbar(
          // 默认写法
@@ -112,6 +152,13 @@ class _MyHomePageState extends State<MyHomePage> {
       },
 
     );
+  }
+
+  void _pushDetail() {
+    //创建导航栏控件Navigator，然后往里面塞入MaterialPageRoute控件
+    Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
+      return HomePersonDetailPage();
+    }));
   }
 
   // 数据源
