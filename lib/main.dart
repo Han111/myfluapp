@@ -26,7 +26,10 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: '关系网',
       home: IndexPage(),
-      theme: ThemeData.light(),
+      theme: new ThemeData(
+        primaryColor: Colors.white,
+      ),
+      // theme: ThemeData.light(),
       // title: 'Startup Name Generator',
       // home: new RandomWords(),
     );

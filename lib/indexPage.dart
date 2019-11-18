@@ -47,6 +47,7 @@ class _IndexPageState extends State<IndexPage> {
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         items: bottomTabs,
+        selectedItemColor: Colors.blue,
         onTap: (index){
           setState(() {
             currentIndex = index;

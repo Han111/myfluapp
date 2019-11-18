@@ -156,9 +156,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _pushDetail() {
     //创建导航栏控件Navigator，然后往里面塞入MaterialPageRoute控件
-    Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
-      return HomePersonDetailPage();
-    }));
+    // Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
+    //   return HomePersonDetailPage();
+    // }));
+    Navigator.of(context,rootNavigator: true).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return HomePersonDetailPage();
+        }
+      )
+    );
+    // Navigator.of(widget.parentContext).push(new MaterialPageRoute(
+    //                         builder: (BuildContext context) => new HomePersonDetailPage()));
   }
 
   // 数据源
