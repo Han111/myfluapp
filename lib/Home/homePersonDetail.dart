@@ -7,12 +7,42 @@ class HomePersonDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("第二页"),
+        title: new Text("添加"),
       ),
-      body: new Center(
-        child: new FlatButton(onPressed: (){
-          Navigator.pop(context);
-        }, child: new Text("return")),
+      // body: new Center(
+      //   child: new FlatButton(onPressed: (){
+      //     Navigator.pop(context);
+      //   }, child: new Text("return")),
+      // ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            TextField(
+              autofocus: true,
+              decoration: InputDecoration(
+                  labelText: "用户名",
+                  hintText: "用户名或邮箱",
+                  prefixIcon: Icon(Icons.person)
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  labelText: "密码",
+                  hintText: "您的登录密码",
+                  prefixIcon: Icon(Icons.lock)
+              ),
+              obscureText: true,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  labelText: "密码",
+                  hintText: "您的登录密码",
+                  prefixIcon: Icon(Icons.lock)
+              ),
+              obscureText: true,
+            ),
+          ],
+        )
       ),
     );
   }
@@ -26,6 +56,27 @@ class HomePersonDetailPage extends StatelessWidget {
   //   );
   // }
 }
+
+// Column(
+//   children: <Widget>[
+//     TextField(
+//       autofocus: true,
+//       decoration: InputDecoration(
+//           labelText: "用户名",
+//           hintText: "用户名或邮箱",
+//           prefixIcon: Icon(Icons.person)
+//       ),
+//     ),
+//     TextField(
+//       decoration: InputDecoration(
+//           labelText: "密码",
+//           hintText: "您的登录密码",
+//           prefixIcon: Icon(Icons.lock)
+//       ),
+//       obscureText: true,
+//     ),
+//   ],
+// )
 
 class HomePersonDetail extends StatefulWidget {
   @override
